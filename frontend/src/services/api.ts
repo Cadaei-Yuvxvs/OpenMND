@@ -44,7 +44,7 @@ export const paperService = {
     return response.data;
   },
 
-  searchPapers: async (searchRequest: SearchRequest): Promise<any> => {
+  searchPapers: async (searchRequest: SearchRequest): Promise<{ papers: Paper[]; total: number }> => {
     const response = await api.post('/papers/search', searchRequest);
     return response.data;
   },
